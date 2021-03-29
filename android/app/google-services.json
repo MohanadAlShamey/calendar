@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "1030463868815",
+    "project_id": "calendaradmin-20802",
+    "storage_bucket": "calendaradmin-20802.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030463868815:android:527fbc5992528bef1d85fa",
+        "android_client_info": {
+          "package_name": "com.mh.shamey.calendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ZEKPHc0XFrzec59Od3B3Tvb_ktmfQQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030463868815:android:efab36fe158d1c4a1d85fa",
+        "android_client_info": {
+          "package_name": "com.mh.shamey.calendar.last_calendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ZEKPHc0XFrzec59Od3B3Tvb_ktmfQQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030463868815:android:da6a6d893ef8ad441d85fa",
+        "android_client_info": {
+          "package_name": "com.mh.shamey.calendar_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ZEKPHc0XFrzec59Od3B3Tvb_ktmfQQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030463868815:android:f2ac343e04c830fd1d85fa",
+        "android_client_info": {
+          "package_name": "com.mh.shamey.calendar_final"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ZEKPHc0XFrzec59Od3B3Tvb_ktmfQQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030463868815-vvm5hqeorq7d94dhiqdi5dov7l1ppnrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
