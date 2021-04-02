@@ -14,28 +14,18 @@ class MyAppBar extends GetWidget<HomeController> implements PreferredSizeWidget 
   var box =GetStorage(APPNAME);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Text('app_name'.tr),
-        ),
-actions: [
-  IconButton(icon: Icon(Icons.new_releases_sharp), onPressed: (){
-    Get.toNamed(RoutesApp.NEWSPAGE);
-  }),
-  IconButton(icon: Icon(Icons.location_history), onPressed: ()async{
-   var pos=await location.getLocation();
-   controller.lattude.value=pos.latitude.toString();
-   controller.langtude.value=pos.longitude.toString();
-   controller.getPrayerTime();
-   await box.write('position',{'lat':pos.latitude.toString(),'long':pos.longitude.toString()});
+    return  AppBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      centerTitle: true,
+      title: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text('app_name'.tr),
+      ),
+      actions: [
 
-  })
-],
-        ),
-      );
+      ],
+    );
 
 
     /* Container(

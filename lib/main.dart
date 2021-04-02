@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.topLevel,
+      debugShowCheckedModeBanner: false,
       title: 'app_name'.tr,
       translations: TranslateApp(),
       getPages: PageApp.Pages,
