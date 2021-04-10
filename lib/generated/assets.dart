@@ -3,7 +3,9 @@ class Assets {
   Assets._();
 
   static const String imgsAyasofia = 'assets/imgs/ayasofia.jpeg';
-  static const String imgsBg = 'assets/imgs/bg.jpg';
+  static const String imgsBg = 'assets/imgs/bg.png';
+  static const String imgsList = 'assets/imgs/list.png';
   static const String imgsMosq = 'assets/imgs/mosq.jpg';
+  static const String soundAdan = 'assets/sound/adan.mp3';
 
 }

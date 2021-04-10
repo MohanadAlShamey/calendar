@@ -1,11 +1,10 @@
+import 'package:calendar/app/country_page.dart';
 import 'package:calendar/langs/translate_app.dart';
-import 'package:calendar/route/page_app.dart';
-import 'package:calendar/route/route_app.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-
 import 'constants.dart';
 
 void main() async{
@@ -29,9 +28,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'app_name'.tr,
       translations: TranslateApp(),
-      getPages: PageApp.Pages,
-      initialRoute: RoutesApp.HOMEPAGE,
+     // getPages: PageApp.Pages,
+      //initialRoute: RoutesApp.COUNTRYPAGE,
       locale: Locale('ar'),
+      home: CountryPage(),
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
