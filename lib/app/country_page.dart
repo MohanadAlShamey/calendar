@@ -1,5 +1,7 @@
+import 'package:calendar/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'HomePage.dart';
@@ -10,6 +12,7 @@ class CountryPage extends StatefulWidget {
 }
 
 class _CountryPageState extends State<CountryPage> {
+  GetStorage box=GetStorage(APPNAME);
   List<String> countries = [
     "Aabenraa",
     "Aalborg",
@@ -75,67 +78,66 @@ class _CountryPageState extends State<CountryPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/imgs/bg.png'),fit: BoxFit.cover)
-        ),
-        child: SafeArea(
-          child: Container(
-            child: Column(
-              children: [
-                Container(
-                  height: 60,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/imgs/list.png'),
-                        fit: BoxFit.fitWidth),
-                  ),
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 35),
-                      child: TextField(
-                        style: GoogleFonts.cairo(color: Colors.white),
-                        onChanged: (txt){
-                          setState(() {
-                            countryList=countries.where((element) => element.toLowerCase().contains(txt.toLowerCase())).toList(growable: true);
-                          });
-                        },
-                        decoration: InputDecoration(
-                          hintText: 'search'.tr,
-                          hintStyle: GoogleFonts.cairo(color: Colors.red),
-                          border: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                        ),
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/imgs/bg.png'),fit: BoxFit.cover)
+      ),
+      child: SafeArea(
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/imgs/list.png'),
+                      fit: BoxFit.fitWidth),
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 35),
+                    child: TextField(
+                      style: GoogleFonts.cairo(color: Colors.white),
+                      onChanged: (txt){
+                        setState(() {
+                          countryList=countries.where((element) => element.toLowerCase().contains(txt.toLowerCase())).toList(growable: true);
+                        });
+                      },
+                      decoration: InputDecoration(
+                        hintText: 'search'.tr,
+                        hintStyle: GoogleFonts.cairo(color: Colors.red),
+                        border: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
                       ),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage(country: countryList[index],)));
-                        },
-                        child: Container(
-                          height: 45,
-                          margin: EdgeInsets.symmetric(vertical: 15),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/imgs/list.png'),
-                                fit: BoxFit.fitWidth),
-                          ),
-                          child: Center(child: Text(countryList[index],style: GoogleFonts.cairo(color: Colors.white),)),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: ()async{
+                        await box.write('country', countryList[index]);
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage(country: countryList[index],)));
+                      },
+                      child: Container(
+                        height: 45,
+                        margin: EdgeInsets.symmetric(vertical: 15),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/imgs/list.png'),
+                              fit: BoxFit.fitWidth),
                         ),
-                      );
-                    },
-                    itemCount: countryList.length,
-                  ),
+                        child: Center(child: Text(countryList[index],style: GoogleFonts.cairo(color: Colors.white,fontSize: 14),)),
+                      ),
+                    );
+                  },
+                  itemCount: countryList.length,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

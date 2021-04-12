@@ -102,54 +102,83 @@ class NewsPage extends StatelessWidget {
                                     SizedBox(
                                       height: 5,
                                     ),
-                                    InkWell(
-                                      onTap: () async {
-                                        await canLaunch(post.get('url'))
-                                            ? await launch(
-                                          post.get('url') ?? '',
-                                          enableJavaScript: true,
-                                        )
-                                            : throw 'Could not launch ${post.get('url')}';
-                                      },
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            color: Color.fromARGB(
-                                                255, 242, 134, 95),
-                                            borderRadius: BorderRadius.only(
-                                                bottomLeft:
-                                                Radius.circular(4),
-                                                bottomRight:
-                                                Radius.circular(4))),
-                                        child: Padding(
-                                          padding:
-                                          const EdgeInsets.all(15.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            children: [
-                                              Text(' ' + 'pay'.tr,
-                                                  style: GoogleFonts.cairo(
-                                                      color: Colors.white,
-                                                      fontSize: 18,
-                                                      fontWeight:
-                                                      FontWeight.bold)),
-                                              Text(
-                                                '\$' +
-                                                    post
-                                                        .get('balance')
-                                                        .toString(),
-                                                style: GoogleFonts.cairo(
-                                                    color: Colors.white,
-                                                    fontSize: 18,
-                                                    fontWeight:
-                                                    FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    )
+                                   Row(
+                                     children: [
+                                       Expanded(
+                                         flex: 1,
+                                         child: InkWell(
+                                           onTap: () async {
+                                             await canLaunch(post.get('url'))
+                                                 ? await launch(
+                                               post.get('url') ?? '',
+                                               enableJavaScript: true,
+                                             )
+                                                 : throw 'Could not launch ${post.get('url')}';
+                                           },
+                                           child: Container(
+
+                                             decoration: BoxDecoration(
+                                                 color: Color.fromARGB(
+                                                     255, 242, 134, 95),
+                                                 ),
+                                             child: Padding(
+                                               padding:
+                                               const EdgeInsets.all(15.0),
+                                               child: Row(
+                                                 mainAxisAlignment:
+                                                 MainAxisAlignment
+                                                     .spaceBetween,
+                                                 children: [
+                                                   Text(' ' + 'pay'.tr,
+                                                       style: GoogleFonts.cairo(
+                                                           color: Colors.white,
+                                                           fontSize: 18,
+                                                           fontWeight:
+                                                           FontWeight.bold)),
+                                                   Text(
+                                                     '\$' +
+                                                         post
+                                                             .get('balance')
+                                                             .toString(),
+                                                     style: GoogleFonts.cairo(
+                                                         color: Colors.white,
+                                                         fontSize: 18,
+                                                         fontWeight:
+                                                         FontWeight.bold),
+                                                   ),
+                                                 ],
+                                               ),
+                                             ),
+                                           ),
+                                         ),
+                                       ),
+                                       VerticalDivider(thickness: 0.5,width: 0.5,),
+                                       Expanded(
+                                         flex: 1,
+                                         child: InkWell(
+                                           onTap: () async {
+                                             await canLaunch(post.get('mobile'))
+                                                 ? await launch(
+                                               post.get('mobile') ?? '',
+                                               enableJavaScript: true,
+                                             )
+                                                 : throw 'Could not launch ${post.get('url')}';
+                                           },
+                                           child: Container(
+
+                                             decoration: BoxDecoration(
+                                                 color: Color.fromARGB(
+                                                     255, 242, 134, 95),
+                                                ),
+                                             child: Padding(
+                                               padding:  const EdgeInsets.all(10.0),
+                                               child: Image.asset('assets/imgs/mobile.png',alignment: Alignment.center,fit: BoxFit.fitWidth,),
+                                             ),
+                                           ),
+                                         ),
+                                       )
+                                     ],
+                                   ),
                                   ],
                                 ),
                               ),
