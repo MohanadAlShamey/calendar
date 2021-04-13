@@ -136,7 +136,7 @@ class NewsPage extends StatelessWidget {
                                                            fontWeight:
                                                            FontWeight.bold)),
                                                    Text(
-                                                     '\$' +
+
                                                          post
                                                              .get('balance')
                                                              .toString(),
